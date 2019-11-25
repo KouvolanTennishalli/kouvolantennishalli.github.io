@@ -1,0 +1,56 @@
+---
+title: Kouvolan Tennishalli
+start_datetime: 2016-11-10 9:00:00
+end_datetime: 2016-11-10 18:00:00
+timezone: Europe/Helsinki
+description: A fun filled day with friends and beer.
+background_image: /images/rollaattori.jpg
+varausjarjestelmalinkki: https://slsystems.fi/kouvolantennis/
+map:
+  address: Tervalepäntie 3, 45100 KOUVOLA
+  zoom: 16
+  latitude: 60.863098
+  longitude: 26.701914
+_options:
+  label_image:
+    width: 400
+    height: 400
+  image:
+    width: 600
+    height: 1200
+---
+
+<button type="button" onclick="window.location.href = '{{ page.varausjarjestelmalinkki }}';">Varaa aika</button>
+
+<h3 class="editable">Osoite</h3>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1942.618314752815!2d26.699579816134804!3d60.863367882221674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4691b2512b6bbd27%3A0xfe00db67782d01c0!2sTervalep%C3%A4ntie%203%2C%2045100%20Kouvola!5e0!3m2!1sen!2sfi!4v1574717111594!5m2!1sen!2sfi" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+<!--
+<div class="map" id="gmap_canvas"></div>
+-->
+<address><a href="https://www.google.com/maps/place/{{ page.map.address | url_encode }}">{% include icons/place.svg %} {{ page.map.address }}</a></address>
+
+<p class="editable">Yhteystiedot löytyvät <a href="{{ page.varausjarjestelmalinkki }}">varausjärjestelmästä</a></p>
+
+<!--
+<script type="text/javascript">
+	window.mapData = {{ page.map | jsonify }};
+
+	function initMap() {
+		var myOptions = {
+			styles: [{"featureType":"landscape.man_made","elementType":"geometry","stylers":[{"color":"#f7f1df"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#d0e3b4"}]},{"featureType":"landscape.natural.terrain","elementType":"geometry","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"geometry","stylers":[{"color":"#fbd3da"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#bde6ab"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffe15f"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#efd151"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"black"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"color":"#cfb2db"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#a2daf2"}]}],
+			zoom: window.mapData.zoom,
+			center: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude)
+		};
+		var map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
+		var marker = new google.maps.Marker({
+			map: map,
+			position: new google.maps.LatLng(window.mapData.latitude, window.mapData.longitude)
+		});
+
+		google.maps.event.addDomListener(window, "resize", function () {
+			map.setCenter(myOptions.center);
+		});
+	}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ site.google_maps_javascript_api_key }}&amp;callback=initMap"></script>
+-->
